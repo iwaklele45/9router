@@ -1,4 +1,4 @@
-import { ANTIGRAVITY_IDE_BASE_URL, ANTIGRAVITY_IDE_USER_AGENT, ANTIGRAVITY_OAUTH_CLIENT } from "../shared.js";
+import { ANTIGRAVITY_IDE_BASE_URL, ANTIGRAVITY_IDE_FALLBACK_URL, ANTIGRAVITY_IDE_USER_AGENT, ANTIGRAVITY_OAUTH_CLIENT } from "../shared.js";
 
 export default {
   id: "antigravity",
@@ -19,7 +19,7 @@ export default {
   category: "oauth",
   serviceKinds: ["llm", "image"],
   transport: {
-    baseUrls: [ANTIGRAVITY_IDE_BASE_URL],
+    baseUrls: [ANTIGRAVITY_IDE_BASE_URL, ANTIGRAVITY_IDE_FALLBACK_URL],
     format: "antigravity",
     headers: {
       "User-Agent": ANTIGRAVITY_IDE_USER_AGENT,
@@ -75,7 +75,7 @@ export default {
       "https://www.googleapis.com/auth/cclog",
       "https://www.googleapis.com/auth/experimentsandconfigs",
     ],
-    apiEndpoint: "https://cloudcode-pa.googleapis.com",
+    apiEndpoint: "https://daily-cloudcode-pa.googleapis.com",
     apiVersion: "v1internal",
     loadCodeAssistEndpoint: "https://cloudcode-pa.googleapis.com/v1internal:loadCodeAssist",
     onboardUserEndpoint: "https://cloudcode-pa.googleapis.com/v1internal:onboardUser",
